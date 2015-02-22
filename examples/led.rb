@@ -1,4 +1,4 @@
-require 'gpio'
+require 'ruby-gpio'
 
 GPIO.access(blue: 23, yellow: 27, led: 22) do
   blue.as :in

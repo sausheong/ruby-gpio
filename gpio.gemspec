@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Gpio::VERSION
   spec.authors       = ["Chang Sau Sheong"]
   spec.email         = ["sausheong@gmail.com"]
-  spec.summary       = %q{A Linux sysfs-based GPIO interface wrapper for Ruby}
+  spec.summary       = %q{A Ruby DSL to interface with the Raspberry Pi GPIO.}
   spec.description   = %q{Wraps around the Linux sysfs GPIO interface to control GPIO pins. Also watches pins and trigger handlers accordingly.}
   spec.homepage      = "https://github.com/sausheong/ruby-gpio"
   spec.license       = "MIT"

@@ -1,6 +1,6 @@
 # Ruby-GPIO
 
-A Linux sysfs-based GPIO interface wrapper
+A Ruby DSL to interface with the Raspberry Pi GPIO. It wraps around the Linux sysfs-based GPIO interface and provides features to set pins as input or output, pull pins to high or low, and also to asynchronously watch for changes to a pin, then trigger a handler to react to it.
 
 ## Installation
 
@@ -18,7 +18,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Example:
+
+```ruby
+require 'ruby-gpio'
+
+GPIO.access(blue: 23, yellow: 27, led: 22) do
+  blue.as :in # set pin GPIO23, labeled blue, as an input pin
+  yellow.as :in
+  led.as :out
+
+  # watch GPIO23 and turn the led on when it is pulled high
+  # use async to spin it off asynchronously, if you don't use
+  # async, you will wait indefinitely watching for blue
+  blue.async.watch_for(1) do
+    led.on
+  end
+  # watch GPIO23 and turn the led off when it is pulled high
+  yellow.async.watch_for(1) do
+    white.off
+  end
+  
+  # sleep is only necessary if you're watching pins
+  sleep
+end
+```
 
 ## Contributing
 
