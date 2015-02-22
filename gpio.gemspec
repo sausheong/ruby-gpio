@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'gpio/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "gpio"
+  spec.name          = "ruby-gpio"
   spec.version       = Gpio::VERSION
   spec.authors       = ["Chang Sau Sheong"]
   spec.email         = ["sausheong@gmail.com"]
