@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sausheong@gmail.com"]
   spec.summary       = %q{A Linux sysfs-based GPIO interface wrapper}
   spec.description   = %q{Wraps around the Linux sysfs GPIO interface to control GPIO pins. Also watches pins and trigger handlers accordingly.}
-  spec.homepage      = "https://github.com/sausheong/gpio"
+  spec.homepage      = "https://github.com/sausheong/ruby-gpio"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
