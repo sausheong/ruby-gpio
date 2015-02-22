@@ -23,6 +23,7 @@ Example:
 ```ruby
 require 'ruby-gpio'
 
+# blue, yellow and led are labels, 22, 23 and 27 are GPIO pin numbers
 GPIO.access(blue: 23, yellow: 27, led: 22) do
   blue.as :in # set pin GPIO23, labeled blue, as an input pin
   yellow.as :in
