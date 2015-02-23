@@ -29,12 +29,12 @@ GPIO.access(blue: 23, yellow: 27, led: 22) do
   yellow.as :in
   led.as :out
 
-  # watch GPIO23 and turn the led on when it is pulled high
+  # watch GPIO23 and turn the led on when it is set to high
   # use async to watch the pin asynchronously
   blue.async.watch_for(1) do
     led.on
   end
-  # watch GPIO23 and turn the led off when it is pulled high
+  # watch GPIO27 and turn the led off when it is set to high
   yellow.async.watch_for(1) do
     led.off
   end
