@@ -15,7 +15,7 @@ module GPIO
     attr_accessor :name, :number, :direction
 
     def initialize(name, number)
-      init_mutex
+      # init_mutex
       @name = name
       @number = number
     end
