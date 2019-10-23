@@ -15,7 +15,7 @@ module GPIO
     attr_accessor :name, :number, :direction
 
     def initialize(name, number)
-      init_mutex
+      # init_mutex
       @name = name
       @number = number
     end
@@ -73,6 +73,12 @@ module GPIO
     # main entry for the DSL
     def access(hash, &block)
       @pins = {} # a hash of available pins
+      # unexport pins before setup
+      hash.each do |k, v|
+        if exported?(v)
+          unexport v
+        end
+      end
       # set up pins
       hash.each do |k, v|
         @pins[k] = Pin.new(k.to_s, v)
@@ -97,6 +103,10 @@ module GPIO
 
     def export(gpio_num)
       write "export", gpio_num
+    end
+
+    def exported?(gpio_num)
+      Dir.exist?("/sys/class/gpio/gpio#{gpio_num}")
     end
 
     def unexport(gpio_num)
